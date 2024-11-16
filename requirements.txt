@@ -1,0 +1,13 @@
+unstructured
+chromadb
+tiktoken
+fastapi
+uvicorn
+aiohttp
+python-dotenv
+langchain
+langchain_community
+pydantic
+bs4
+PyPDF2
+transformers
