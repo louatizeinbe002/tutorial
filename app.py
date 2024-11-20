@@ -175,7 +175,7 @@ def query():
             OLLAMA_URL,
             temperature=0.7,
             model_kwargs={
-                "api_key": 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,
+                "api_key": "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",
                 "max_length": 512,
             }
         )
