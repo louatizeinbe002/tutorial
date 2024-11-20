@@ -7,6 +7,7 @@ from langchain_experimental.text_splitter import SemanticChunker
 from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_huggingface import HuggingFaceEndpoint
 import pickle
 from objectbox import *
 
@@ -170,7 +171,14 @@ def query():
     """)
     prompt = prompt_template.format(context=context_text, question=query_text)
 
-    model = "modelek a chater"
+    model = HuggingFaceEndpoint(
+            OLLAMA_URL,
+            temperature=0.7,
+            model_kwargs={
+                "api_key": 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,
+                "max_length": 512,
+            }
+        )
     response_text = model.invoke(prompt)
     sources = [entity.metadata for entity, _ in results]
 
